@@ -142,4 +142,5 @@ Run 'docker COMMAND --help' for more information on a command.
 -   [Docker CLI Interface](https://docs.docker.com/engine/reference/commandline/docker/)
 -   [Docker Manuals](https://docs.docker.com/manuals/)
 -   [Inception Tutorial](https://tuto.grademe.fr/inception)
--   [PKCS#10](http://www.pkiglobe.org/pkcs10.html)
+-   [PKCS#10 certificate](http://www.pkiglobe.org/pkcs10.html)
+-   [NGINX SSL Configuration Step by Step Details](https://ubiq.co/tech-blog/nginx-ssl-configuration-step-step-details/)
