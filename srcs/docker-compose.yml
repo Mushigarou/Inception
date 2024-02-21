@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  mariadb:
+    build:
+      context: ./srcs/requirements/mariadb
+      dockerfile: Dockerfile
+    environment:
+      - SQL_DATABASE=my_database_name

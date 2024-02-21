@@ -6,7 +6,7 @@ LABEL maintainer="NGINX"
 
 # Installing nginx, openssl, other utils, and creating a directory for certificates
 RUN apt update && apt upgrade -y \
-    && apt install nginx openssl curl git zsh vim nano -y \
+    && apt install nginx openssl curl git zsh nano -y \
     && mkdir -p /etc/nginx/ssl 
 
 # creating a certificate which nginx will use
