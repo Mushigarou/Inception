@@ -1,3 +1,5 @@
+
+
 all : maria
 
 nginx : ./srcs/requirements/nginx
@@ -11,7 +13,6 @@ maria : ./srcs/requirements/mariadb
 # Removes all stopped containers
 prune :
 	docker container prune -f
-	cclean
 
 rmimages :
 	docker image rm $(docker image ls | awk 'NR >= 2 {print $3}')
