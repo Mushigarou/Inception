@@ -141,6 +141,8 @@ Run 'docker COMMAND --help' for more information on a command.
 -   [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 -   [Docker CLI Interface](https://docs.docker.com/engine/reference/commandline/docker/)
 -   [Docker Manuals](https://docs.docker.com/manuals/)
+-   [Docker Cleanning Commands](https://www.warp.dev/terminus/docker-remove-stopped-containers#:~:text=Removing%20all%20stopped%20containers%20using,using%20their%20name%20or%20ID.)
 -   [Inception Tutorial](https://tuto.grademe.fr/inception)
 -   [PKCS#10 certificate](http://www.pkiglobe.org/pkcs10.html)
 -   [NGINX SSL Configuration Step by Step Details](https://ubiq.co/tech-blog/nginx-ssl-configuration-step-step-details/)
+-   [Configuring NGINX and NGINX Plus as a Web Server](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/)
