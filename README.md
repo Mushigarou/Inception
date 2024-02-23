@@ -146,3 +146,7 @@ Run 'docker COMMAND --help' for more information on a command.
 -   [PKCS#10 certificate](http://www.pkiglobe.org/pkcs10.html)
 -   [NGINX SSL Configuration Step by Step Details](https://ubiq.co/tech-blog/nginx-ssl-configuration-step-step-details/)
 -   [Configuring NGINX and NGINX Plus as a Web Server](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/)
+-   [MariaDB Training & Tutorials](https://mariadb.com/kb/en/training-tutorials/)
+-   [How to Install WordPress on Debian 10/11 (Step by Step)](https://cloudinfrastructureservices.co.uk/install-wordpress-on-debian-10-11/)
+-   [Install and configure WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview)
+-   [How To Install PHP 7.4 on Debian 10 / Debian 9](https://computingforgeeks.com/how-to-install-latest-php-on-debian/)
