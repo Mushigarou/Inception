@@ -14,6 +14,9 @@ maria : ./srcs/requirements/mariadb
 wordpress : ./srcs/requirements/wordpress
 	docker build -t wordpress ./srcs/requirements/wordpress
 	docker run -it wordpress
+# docker run -p 8080:80 -p 9000:9000 -it wordpress
+# docker run -it -p 80:80 --name wordpress_we wordpress
+
 
 # Removes all stopped containers
 prune :
@@ -28,6 +31,7 @@ restartDockerDesktop :
 	sed -i '' 's/"filesharingDirectories": \[[^]]*\]/"filesharingDirectories": []/' ~/Library/Group\ Containers/group.com.docker/settings.json
 
 clean : prune rmimages
+	~/Desktop/Cleaner_42/Cleaner_42.sh
 
 re : clean all
 

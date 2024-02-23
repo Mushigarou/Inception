@@ -150,3 +150,4 @@ Run 'docker COMMAND --help' for more information on a command.
 -   [How to Install WordPress on Debian 10/11 (Step by Step)](https://cloudinfrastructureservices.co.uk/install-wordpress-on-debian-10-11/)
 -   [Install and configure WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview)
 -   [How To Install PHP 7.4 on Debian 10 / Debian 9](https://computingforgeeks.com/how-to-install-latest-php-on-debian/)
+-   [Install WordPress Using WP-CLI on Debian 10](https://www.linode.com/docs/guides/how-to-install-wordpress-using-wp-cli-on-debian-10/)
