@@ -3,7 +3,6 @@
 #   mariadb-client  - for interacting with mariaDB databases
 #   apt-cache depends php7.4 [shows dependencies]
 
-
 ARG RELEASE=buster
 FROM debian:${RELEASE}
 

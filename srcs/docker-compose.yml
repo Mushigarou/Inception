@@ -1,54 +1,20 @@
+# A service in Compose is a running container, and service definitions specify information about how each container will run.
 version: '3'
 
 services:
-  nginx:
-    build:
-      context: requirements/nginx
-    container_name: nginx
-    restart: on-failure
-    ports:
-      - "443:443"
-    volumes:
-      - wordpress_data:/var/www/html
-      - wordpress_db:/var/lib/mysql
-    networks:
-      - app-network
-
-  wordpress:
-    build:
-      context: requirements/wordpress
-    container_name: wordpress
-    restart: always
-    volumes:
-      - wordpress_data:/var/www/html
-    environment:
-      WORDPRESS_DB_HOST: mariadb
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DB_USER: ${MYSQL_USER}
-      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
-    depends_on:
-      - mariadb
-    networks:
-      - app-network
-
   mariadb:
-    build:
-      context: requirements/mariadb
+    build: ./requirements/mariadb # Configuration options that are applied at build time.
     container_name: mariadb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    volumes:
-      - wordpress_db:/var/lib/mysql
-    networks:
-      - app-network
+    image: mariadb:v1.0
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - "3306"
+    # networks:
+    #   - inception
+    # volumes:
+    #   - mariadb:~/Desktop/var/lib/mysql
 
-networks:
-  app-network:
-    driver: bridge
-
-volumes:
-  wordpress_data:
-  wordpress_db:
+# networks:
+#   inception:
+#   driver: bridge
