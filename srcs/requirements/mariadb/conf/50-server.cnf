@@ -14,4 +14,4 @@ bind_address=*
 datadir = /var/lib/mysql
 
 # Specifies the Unix socket file that the MariaDB server uses for communication
-socket = /run/mysqld/mysqld.sock
+socket = /var/run/mysqld/mysqld.sock

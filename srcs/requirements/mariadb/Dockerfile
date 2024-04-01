@@ -12,13 +12,13 @@ RUN apt update && apt upgrade -y && apt install \
 # Copy current config file mariadb.conf.d folder
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY tools/mysql.sh .
+# Copy mariadb script to working directory in container
+COPY tools/init-mariadb.sh .
 
-RUN chmod +x mysql.sh
+# Gives execute permission to mariadb.sh
+RUN chmod +x init-mariadb.sh
+
+# EXPOSE 3306
 
 # Start MySQL service, and create a dababase, a user and grant all priviligies to that user
-ENTRYPOINT [ "./mysql.sh" ]
-
-# Adds some safety features such as restarting the server when an error occurs
-#   and logging runtime information to an error log.
-# CMD ["mysqld_safe"]
+CMD [ "./init-mariadb.sh" ]
