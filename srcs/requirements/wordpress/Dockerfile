@@ -19,14 +19,8 @@ RUN apt install -y lsb-release apt-transport-https ca-certificates \
     && apt install -y php7.4 php7.4-fpm php7.4-mysql mariadb-client
 
 # Installing wordpress, WP CLI, and extracting it 
-RUN wget https://wordpress.org/wordpress-6.2.4.tar.gz -P /var/www \
-    && cd /var/www \
-    && tar -xzvf wordpress-6.2.4.tar.gz \
-    && rm wordpress-6.2.4.tar.gz \
-    && chown -R root:root /var/www/wordpress \
-    && chmod 755 /var/www/wordpress \
-    && wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-    && chmod +x wp-cli.phar \
+RUN  wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod 755 wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp
 
 # Changed listen from Unix Socket to TCP socket && [clear_env] make all

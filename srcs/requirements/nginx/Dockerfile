@@ -14,8 +14,8 @@ RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout \
     /etc/nginx/ssl/inception.key \
     -subj "/C=MA/ST=CA/L=Mar/O=1337/OU=1337/CN=mfouadi.42.fr/UID=mfouadi"
 
-RUN chmod 755 /var/www/html && chown -R www-data:www-data /var/www/html
+RUN chmod 755 /var/www && chown -R www-data:www-data /var/www
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-CMD ["sh", "-c", "sleep 15 && echo nginx starts && nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "sleep 30 && echo nginx starts && nginx -g 'daemon off;'"]

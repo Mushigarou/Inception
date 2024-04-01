@@ -1,9 +1,10 @@
 include srcs/.env
 
-all : clean createV compose
+all : createV compose
 
 createV :
-	mkdir ~/Desktop/data/wordpress ~/Desktop/data/mariadb 
+	mkdir ~/Desktop/data/wordpress ~/Desktop/data/mariadb
+
 up :
 	make clean
 	docker-compose -f srcs/docker-compose.yml up
