@@ -3,23 +3,7 @@ include srcs/.env
 all : createV compose
 
 createV :
-	mkdir ~/Desktop/data/wordpress ~/Desktop/data/mariadb
-
-up :
-	make clean
-	docker-compose -f srcs/docker-compose.yml up
-
-nginx : ./srcs/requirements/nginx
-	docker build -t nginx ./srcs/requirements/nginx
-	docker run -p 443:443 nginx
-
-maria : ./srcs/requirements/mariadb
-	docker build -t mariadb ./srcs/requirements/mariadb
-	docker run mariadb
-
-wordpress : ./srcs/requirements/wordpress
-	docker build -t wordpress ./srcs/requirements/wordpress
-	docker run -it wordpress
+	mkdir -p ~/Desktop/data ~/Desktop/data/wordpress ~/Desktop/data/mariadb
 
 compose :
 	docker-compose -f srcs/docker-compose.yml up
@@ -32,15 +16,20 @@ prune :
 
 rmimages :
 	docker image rm $(shell docker image ls | awk 'NR >= 2 {print $$3}')
+
+rmdir :
 	rm -rf ~/Desktop/data/wordpress ~/Desktop/data/mariadb 
 
-restartDockerDesktop :
-# pkill -9 docker
-	rm -rf ~/Library/Containers/com.docker.*
-	sed -i '' 's/"filesharingDirectories": \[[^]]*\]/"filesharingDirectories": []/' ~/Library/Group\ Containers/group.com.docker/settings.json
+rmVolumes :
+	docker volume rm $(shell docker volume ls -q)
 
-clean : prune rmimages
+pruneH :
+	$(shell docker container prune -f)
+
+clean : rmVolumes rmimages rmdir
+
+fclean : prune clean
 
 re : clean all
 
-.PHONY: clean re maria nginx all prune rmimages up compose
+.PHONY: clean re maria nginx all prune rmimages up compose pruneH rmVolumes
