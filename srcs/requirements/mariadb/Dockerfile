@@ -18,7 +18,5 @@ COPY tools/init-mariadb.sh .
 # Gives execute permission to mariadb.sh
 RUN chmod +x init-mariadb.sh
 
-# EXPOSE 3306
-
 # Start MySQL service, and create a dababase, a user and grant all priviligies to that user
 CMD [ "./init-mariadb.sh" ]
