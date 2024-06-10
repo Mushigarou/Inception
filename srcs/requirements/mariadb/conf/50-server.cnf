@@ -1,0 +1,17 @@
+# Sets parameters for the mysqld service.
+[mysqld]
+
+# Specifies the user under which the MariaDB server process runs
+user = mysql
+
+# Specifies the port on which the MariaDB server listens for connections
+port = 3306
+
+# Binds the MariaDB server to all available network interfaces
+bind_address=*
+
+# Specifies the directory where MariaDB data files are stored
+datadir = /var/lib/mysql
+
+# Specifies the Unix socket file that the MariaDB server uses for communication
+socket = /var/run/mysqld/mysqld.sock
