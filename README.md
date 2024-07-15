@@ -1,8 +1,8 @@
 # Inception
 
-This is a functional wordpress site, that runs by using the technology of Docker and docker compose tool.
+This is a containerized Wordpress site, that runs by using the technology of Docker and Docker compose tool.
 
-# Containers
+# Containers / Services
 
 1 - Nginx
 
@@ -10,28 +10,39 @@ This is a functional wordpress site, that runs by using the technology of Docker
 
 3 - MariaDB
 
+# Usage
+
+```bash
+# runs containers using docker-compose
+$> make
+
+# stop, remove containers
+$> make clean
+# removes volumes, images, and directory volume on the host
+$> make clean
+```
+
 # Basic Docker commands
+```bash
 ## **Build An Image**
-```bash
-# this will give you an image named "none"
+
+# builds an image named "none"
 $> docker build <Dockerfile_Path_Directory>
-```
-```bash
-# <image_name> will be the name of the image when you run next command
+
+# <image_name> will be the name of the image
 $> docker build -t <image_name> <Dockerfile_Path_Directory>
+
+# List images
+`$> docker image ls`
+
+# List running images
+$> docker ps
+$> docker ps -a [including stopped images]
+
+# Start an image
+$> docker run <image_name>
+$> docker run -it <image_name> (access terminal of container after launching it)
 ```
-
-## **List Images**
-- `$> docker image ls`
-
-## **List Running Images**
-- ` docker ps `
-    - ` docker ps -a [including stopped images]`
-
-## **Start An Image**
-- `docker run <image_name>`
-- `docker run -it <image_name>` (access terminal of container after launching it)
-
 # Ressources
 ## Docker
 -   [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
